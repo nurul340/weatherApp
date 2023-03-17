@@ -22,7 +22,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import static android.content.ContentValues.TAG;
 
 
-import static com.photon.weatherapp.model.LocationLiveData.INTERVAL;
+import static com.photon.weatherapp.data.model.LocationLiveData.INTERVAL;
 
 import javax.inject.Inject;
 

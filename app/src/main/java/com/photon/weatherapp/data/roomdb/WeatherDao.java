@@ -5,7 +5,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.photon.weatherapp.data.wether_details.WeatherResponse;
+import com.photon.weatherapp.data.model.wether_details.WeatherResponse;
 
 import io.reactivex.Completable;
 import io.reactivex.Single;

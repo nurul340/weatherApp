@@ -2,7 +2,7 @@ package com.photon.weatherapp.data.network;
 
 import static com.photon.weatherapp.utils.Constants.END_POINT;
 
-import com.photon.weatherapp.data.wether_details.WeatherResponse;
+import com.photon.weatherapp.data.model.wether_details.WeatherResponse;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;

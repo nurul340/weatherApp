@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.photon.weatherapp.data.network.NetworkCallState;
 import com.photon.weatherapp.data.repo.WeatherInfoRepository;
-import com.photon.weatherapp.data.wether_details.WeatherResponse;
+import com.photon.weatherapp.data.model.wether_details.WeatherResponse;
 
 import javax.inject.Inject;
 

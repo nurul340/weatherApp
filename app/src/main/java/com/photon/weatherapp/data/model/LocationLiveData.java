@@ -1,4 +1,4 @@
-package com.photon.weatherapp.model;
+package com.photon.weatherapp.data.model;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
@@ -15,7 +15,6 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.Priority;
-import com.google.android.gms.tasks.OnSuccessListener;
 
 import javax.inject.Inject;
 

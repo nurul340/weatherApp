@@ -1,4 +1,4 @@
-package com.photon.weatherapp.data.wether_details;
+package com.photon.weatherapp.data.model.wether_details;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -8,7 +8,6 @@ import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.photon.weatherapp.BR;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

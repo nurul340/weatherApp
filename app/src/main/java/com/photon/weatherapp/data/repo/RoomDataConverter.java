@@ -4,12 +4,12 @@ import androidx.room.TypeConverter;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.photon.weatherapp.data.wether_details.Clouds;
-import com.photon.weatherapp.data.wether_details.Coord;
-import com.photon.weatherapp.data.wether_details.Main;
-import com.photon.weatherapp.data.wether_details.Sys;
-import com.photon.weatherapp.data.wether_details.Weather;
-import com.photon.weatherapp.data.wether_details.Wind;
+import com.photon.weatherapp.data.model.wether_details.Clouds;
+import com.photon.weatherapp.data.model.wether_details.Coord;
+import com.photon.weatherapp.data.model.wether_details.Main;
+import com.photon.weatherapp.data.model.wether_details.Sys;
+import com.photon.weatherapp.data.model.wether_details.Weather;
+import com.photon.weatherapp.data.model.wether_details.Wind;
 
 import java.util.List;
 

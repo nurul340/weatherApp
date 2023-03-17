@@ -1,4 +1,4 @@
-package com.photon.weatherapp.data.wether_details;
+package com.photon.weatherapp.data.model.wether_details;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;

@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 import com.photon.weatherapp.data.repo.RoomDataConverter;
-import com.photon.weatherapp.data.wether_details.WeatherResponse;
+import com.photon.weatherapp.data.model.wether_details.WeatherResponse;
 
 @Database(entities = {WeatherResponse.class}, version = 1,exportSchema = false)
 

@@ -3,7 +3,7 @@ package com.photon.weatherapp.data.repo;
 import com.photon.weatherapp.BuildConfig;
 import com.photon.weatherapp.data.network.ApiInterface;
 import com.photon.weatherapp.data.roomdb.WeatherDao;
-import com.photon.weatherapp.data.wether_details.WeatherResponse;
+import com.photon.weatherapp.data.model.wether_details.WeatherResponse;
 
 import javax.inject.Inject;
 
