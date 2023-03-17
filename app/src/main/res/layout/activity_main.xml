@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.photon.weatherapp.views.WeatherInfoViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.MainActivity"
+        android:orientation="vertical"
+        android:background="@drawable/background_gradient">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="10dp">
+
+            <EditText
+                android:id="@+id/et_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:completionThreshold="2"
+                android:paddingBottom="12dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="70dp"
+                android:hint="@string/et_hint_search_any_us_city"
+                android:inputType="textCapSentences"
+                android:background="@drawable/et_background_search_location"/>
+
+            <ImageView
+                android:id="@+id/btn_search"
+                android:foreground="?android:selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:elevation="10dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:layout_alignParentEnd="true"
+                android:onClick="onSearchButtonClicked"
+                android:background="@drawable/btn_background_search"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="3dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardBackgroundColor="@color/black"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/layout_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{viewModel.weatherInfoCallState.isLoading ? View.VISIBLE : View.GONE}">
+                    <include layout="@layout/activity_main_placeholder"/>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="30dp">
+                    <TextView
+                        android:id="@+id/tv_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Friday, 18 March"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:text="@{viewModel.weatherInfoCallState.data.formatedDate}"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_weather_partial_cloud"
+                        android:layout_alignParentEnd="true"
+                        android:layout_above="@+id/view_align"/>
+
+                    <TextView
+                        android:id="@+id/tv_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Los Angeles"
+                        android:textColor="@color/white"
+                        android:layout_below="@+id/tv_day"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewModel.weatherInfoCallState.data.name}"/>
+                    <TextView
+                        android:id="@+id/tv_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="29&#176;c"
+                        android:text="@{viewModel.weatherInfoCallState.data.main.temp}"
+                        android:textSize="60sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_below="@+id/tv_city"
+                        android:layout_marginTop="5dp"/>
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Sunny Cloudy"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_below="@+id/tv_temp"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewModel.weatherInfoCallState.data.weatherDesc}"/>
+
+                    <View
+                        android:id="@+id/view_align"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/tv_status"/>
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginBottom="100dp"
+                    android:layout_centerInParent="true"
+                    tools:text="Error"
+                    android:text="@{viewModel.weatherInfoCallState.errorMessage}"
+                    android:textAlignment="center"
+                    android:visibility="@{viewModel.weatherInfoCallState.isError ? View.VISIBLE : View.GONE}"
+                    tools:visibility="visible"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#C60303"
+                    android:textAllCaps="true"
+                    android:drawablePadding="5dp"
+                    app:drawableTopCompat="@drawable/ic_baseline_error_outline_24" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</layout>

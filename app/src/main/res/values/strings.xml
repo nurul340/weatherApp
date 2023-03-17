@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="et_hint_search_any_us_city">Search by city name</string>
+</resources>

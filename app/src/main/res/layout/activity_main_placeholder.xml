@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="30dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <View
+        android:id="@+id/load_day"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:background="@color/shimmer_background"
+        android:layout_toStartOf="@+id/iv_icon"
+        android:layout_marginEnd="20dp"/>
+
+    <View
+        android:id="@+id/iv_icon"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:background="@color/shimmer_background"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/load_view_align"/>
+
+    <View
+        android:id="@+id/load_city"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/load_day"
+        android:background="@color/shimmer_background"/>
+
+    <View
+        android:id="@+id/load_temp"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/load_city"
+        android:layout_marginTop="5dp"
+        android:background="@color/shimmer_background"/>
+
+    <View
+        android:id="@+id/load_status"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/load_temp"
+        android:layout_marginTop="5dp"
+        android:background="@color/shimmer_background"/>
+
+    <View
+        android:id="@+id/load_view_align"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/load_status" />
+
+</RelativeLayout>
