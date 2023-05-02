@@ -3,9 +3,10 @@ package com.photon.weatherapp.data.model.wether_details;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
+import com.example.weatherapp.BR;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.photon.weatherapp.BR;
+
 
 public class Main extends BaseObservable {
 

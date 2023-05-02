@@ -16,7 +16,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 
-import com.photon.weatherapp.databinding.ActivityMainBinding;
+import com.example.weatherapp.databinding.ActivityMainBinding;
 import com.photon.weatherapp.data.model.LocationLiveData;
 import com.photon.weatherapp.utils.Constants;
 import com.photon.weatherapp.utils.GpsUtils;
